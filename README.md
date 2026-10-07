@@ -1,27 +1,26 @@
 # 🧠 GyanKendra
 
-> **A personal knowledge board for people who keep learning.**
+> ### A personal knowledge board for people who keep learning.
 
 Topics live as push-pin sticky notes you can star, sort into collections, fill with links and Markdown notes, and revise on a spaced-repetition schedule — plus a built-in tool that turns any YouTube lecture into a transcript or AI-written study notes.
 
 Built on **MongoDB, Express, React and Node** with MVC on the server and JWT authentication. Every account sees only its own data.
 
----
+<br>
 
-## 📑 Table of contents
+<div align="center">
 
-- [Capabilities](#capabilities)
-- [Architecture](#architecture)
-- [File structure](#file-structure)
-- [Tech stack](#tech-stack)
-- [Local setup](#local-setup)
-- [Environment variables](#environment-variables)
-- [Running and testing](#running-and-testing)
-- [API reference](#api-reference)
-- [How the pieces work](#how-the-pieces-work)
-- [Deployment](#deployment)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white)
+![Gemini](https://img.shields.io/badge/Gemini%20AI-8E75B2?style=for-the-badge&logo=google&logoColor=white)
+
+</div>
 
 ---
+
 
 # ✨ Capabilities
 
@@ -79,11 +78,19 @@ Built on **MongoDB, Express, React and Node** with MVC on the server and JWT aut
 
 ### 🔄 Request path
 
-A request enters a router, which applies `authenticateToken` (and a rate limiter where relevant), then hands off to a controller. Controllers hold the logic and talk to Mongoose models. Anything thrown lands in one central error handler that converts it to `{ message }`.
+A request enters a router, which applies `authenticateToken` (and a rate limiter where relevant), then hands off to a controller.
+
+Controllers hold the logic and talk to Mongoose models.
+
+Anything thrown lands in one central error handler that converts it to `{ message }`.
 
 ### 💾 Where state lives
 
-All persistent data is in MongoDB. The browser keeps only the JWT and the dark-mode preference in `localStorage`. The board's React state is a cache of what the API returned, updated optimistically and rolled back on failure.
+All persistent data is in MongoDB.
+
+The browser keeps only the JWT and the dark-mode preference in `localStorage`.
+
+The board's React state is a cache of what the API returned, updated optimistically and rolled back on failure.
 
 ### 🚫 What is deliberately not stored
 
@@ -207,17 +214,97 @@ gyankendra/
 
 # 🧰 Tech stack
 
-| Layer | Choice |
-|:---|:---|
-| **Database** | MongoDB Atlas, Mongoose schemas |
-| **Server** | Node.js, Express, MVC |
-| **Auth** | JWT bearer tokens, bcrypt hashing |
-| **AI** | Google Gemini Flash (structured output) |
-| **PDF** | pdfkit |
-| **Captions** | youtube-transcript + YouTube oEmbed |
-| **Client** | React 18, Vite, React Router, Axios |
-| **Styling** | Tailwind CSS, lucide-react |
-| **Dev** | concurrently, node:test |
+<div align="center">
+
+### ⚡ Full-stack JavaScript
+
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
+![Mongoose](https://img.shields.io/badge/Mongoose-880000?style=flat-square&logo=mongoose&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)
+
+### 🎨 Frontend
+
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=flat-square&logo=reactrouter&logoColor=white)
+![Axios](https://img.shields.io/badge/Axios-5A29E4?style=flat-square&logo=axios&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
+![Lucide](https://img.shields.io/badge/Lucide-111827?style=flat-square&logo=lucide&logoColor=white)
+
+### 🔐 Authentication & Security
+
+![JWT](https://img.shields.io/badge/JWT-000000?style=flat-square&logo=jsonwebtokens&logoColor=white)
+![bcrypt](https://img.shields.io/badge/bcrypt-003B57?style=flat-square&logo=letsencrypt&logoColor=white)
+
+### 🤖 AI & Media
+
+![Google Gemini](https://img.shields.io/badge/Google_Gemini-8E75B2?style=flat-square&logo=google&logoColor=white)
+![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=flat-square&logo=youtube&logoColor=white)
+![PDF](https://img.shields.io/badge/PDF-EC1C24?style=flat-square&logo=adobeacrobatreader&logoColor=white)
+
+### ☁️ Deployment
+
+![MongoDB Atlas](https://img.shields.io/badge/MongoDB_Atlas-47A248?style=flat-square&logo=mongodb&logoColor=white)
+![Render](https://img.shields.io/badge/Render-46E3B7?style=flat-square&logo=render&logoColor=black)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
+
+</div>
+
+### 🧩 Stack overview
+
+| Layer | Technology | Purpose |
+|:---|:---|:---|
+| 🗄️ **Database** | MongoDB Atlas + Mongoose | Persistent application data and schemas |
+| ⚙️ **Backend** | Node.js + Express | REST API and server-side logic |
+| 🏛️ **Architecture** | MVC | Separation of routes, controllers and models |
+| 🎨 **Frontend** | React 18 + Vite | Application UI and client-side state |
+| 🧭 **Routing** | React Router | SPA navigation and protected routes |
+| 🎨 **Styling** | Tailwind CSS | Responsive UI and visual system |
+| 🧩 **Icons** | lucide-react | Interface icons and visual elements |
+| 🔐 **Authentication** | JWT + bcrypt | Token authentication and password hashing |
+| 🤖 **AI** | Google Gemini Flash | Structured AI-generated study notes |
+| 🎥 **Captions** | youtube-transcript + YouTube oEmbed | Lecture captions and video metadata |
+| 📄 **PDF** | pdfkit | Generated structured study-note PDFs |
+| 🌐 **HTTP Client** | Axios | Client-to-server API communication |
+| 🛡️ **Rate limiting** | Custom sliding-window limiter | Abuse prevention and API/Gemini cost control |
+| 🧪 **Testing** | node:test | Integration and unit testing |
+| 📦 **Development** | concurrently | Runs client and server together |
+| ☁️ **Backend deployment** | Render | Production Express server |
+| ▲ **Frontend deployment** | Vercel | Production React application |
+
+### 🏛️ Architecture layers
+
+```text
+┌──────────────────────────────────────────────────────────────┐
+│                        FRONTEND                              │
+│                                                              │
+│  React 18  •  Vite  •  React Router  •  Axios              │
+│  Tailwind CSS  •  Lucide                                    │
+└───────────────────────────────┬──────────────────────────────┘
+                                │
+                                │ HTTPS + JWT
+                                ▼
+┌──────────────────────────────────────────────────────────────┐
+│                         BACKEND                              │
+│                                                              │
+│  Express → Routes → Middleware → Controllers → Models       │
+│                                                              │
+│  Auth • Rate Limiting • Validation • Error Handling          │
+└───────────────┬───────────────────────────┬──────────────────┘
+                │                           │
+                ▼                           ▼
+┌──────────────────────────┐     ┌────────────────────────────┐
+│       MongoDB Atlas      │     │      External Services     │
+│                          │     │                            │
+│ Users                    │     │ YouTube                    │
+│ Topics                   │     │ Gemini Flash               │
+│ Resources               │     │                            │
+│ Collections             │     │                            │
+│ Activities              │     │                            │
+│ Transcript metadata     │     │                            │
+└──────────────────────────┘     └────────────────────────────┘
+```
 
 ---
 
@@ -345,7 +432,9 @@ All routes are under `/api`. Everything except signup, login and `/stats` requir
 
 ## 🔒 Account isolation
 
-The user id comes from the verified JWT and nothing else — never from a body, a URL or an imported file. Every query carries it as part of the filter rather than checking ownership afterwards:
+The user id comes from the verified JWT and nothing else — never from a body, a URL or an imported file.
+
+Every query carries it as part of the filter rather than checking ownership afterwards:
 
 ```js
 Topic.findOne({ _id: req.params.id, userId: req.user.id })
@@ -417,7 +506,9 @@ Refused requests answer `429` with `Retry-After`; every response carries `X-Rate
 
 # ☁️ Deployment
 
-The backend goes to **Render**, the frontend to **Vercel**, and the database is **MongoDB Atlas**. Step-by-step instructions are in [DEPLOYMENT.md](DEPLOYMENT.md).
+The backend goes to **Render**, the frontend to **Vercel**, and the database is **MongoDB Atlas**.
+
+Step-by-step instructions are in [DEPLOYMENT.md](DEPLOYMENT.md).
 
 ## The short version
 
@@ -449,6 +540,20 @@ Allow access from anywhere (`0.0.0.0/0`) so Render can connect.
 
 ---
 
-## 👨‍💻 Contributed by
+# 👨‍💻 Contributed by
 
-**[Soumyadeep De](https://www.linkedin.com/in/soumyadeep-de-217597324/)**
+<div align="center">
+
+### **Soumyadeep De**
+
+[LinkedIn](https://www.linkedin.com/in/soumyadeep-de-217597324/)
+
+</div>
+
+---
+
+<div align="center">
+
+**🧠 Learn. Organize. Revise. Remember.**
+
+</div>
