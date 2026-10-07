@@ -1,0 +1,17 @@
+{
+  "name": "gyankendra",
+  "version": "1.0.0",
+  "private": true,
+  "description": "GyanKendra - a sticky-note knowledge board with transcripts and AI notes (MERN)",
+  "scripts": {
+    "dev": "concurrently -n server,client -c cyan,magenta \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "install:all": "npm install && npm install --prefix server && npm install --prefix client",
+    "seed": "npm run seed --prefix server",
+    "test": "npm test --prefix server",
+    "build": "npm run build --prefix client",
+    "start": "npm start --prefix server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
